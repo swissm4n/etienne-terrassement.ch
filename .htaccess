@@ -1,0 +1,48 @@
+RewriteEngine On
+
+# ── Forcer HTTPS ──
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── Domaine canonical : etienne-terrassement.ch (sans www) ──
+RewriteCond %{HTTP_HOST} ^www\.etienne-terrassement\.ch$ [NC]
+RewriteRule ^ https://etienne-terrassement.ch%{REQUEST_URI} [L,R=301]
+
+# ── URLs propres : masquer .html ──
+# Si le fichier .html existe, le servir sans l'extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Rediriger les requêtes avec .html vers l'URL propre
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [L,R=301]
+
+# ── URLs propres : masquer .php ──
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L]
+
+RewriteCond %{REQUEST_METHOD} GET [NC]
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.php[\s?] [NC]
+RewriteRule ^ /%1 [L,R=301]
+
+# ── Cache navigateur ──
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# ── Sécurité ──
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

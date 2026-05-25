@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Etienne Terrassement — Génie Civil & Terrassement | Val de Travers</title>
+    <meta name="description" content="Etienne Terrassement — Travaux de génie civil, terrassement et aménagements extérieurs à Môtiers, Val de Travers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            color: #1a1f2e;
+            background: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', 'Segoe UI', sans-serif; line-height: 1.2; }
+
+        /* ===== UTILITIES ===== */
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+        .section { padding: 100px 0; }
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #d4a036;
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800;
+            color: #1a1f2e;
+            margin-bottom: 20px;
+        }
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: #4a5568;
+            max-width: 600px;
+            line-height: 1.7;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .btn-primary {
+            background: #d4a036;
+            color: #ffffff;
+        }
+        .btn-primary:hover { background: #b8891e; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,160,54,0.3); }
+        .btn-outline {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid rgba(255,255,255,0.6);
+        }
+        .btn-outline:hover { border-color: #d4a036; color: #d4a036; }
+        .btn-dark {
+            background: #1a1f2e;
+            color: #ffffff;
+        }
+        .btn-dark:hover { background: #2d3748; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,31,46,0.3); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 0 24px;
+            transition: all 0.35s ease;
+            background: transparent;
+        }
+        .header.scrolled {
+            background: rgba(26,31,46,0.97);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo-img {
+            height: 52px;
+            width: auto;
+        }
+        .nav { display: flex; align-items: center; gap: 32px; }
+        .nav a {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: #d4a036;
+            transition: width 0.3s;
+        }
+        .nav a:hover { color: #d4a036; }
+        .nav a:hover::after { width: 100%; }
+        .header-right { display: flex; align-items: center; gap: 16px; }
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #d4a036;
+            font-weight: 600;
+            font-size: 0.88rem;
+        }
+        .header-phone svg { width: 16px; height: 16px; }
+
+        /* Mobile menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+        .menu-toggle span {
+            width: 24px; height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 72px; left: 0; right: 0; bottom: 0;
+            background: rgba(26,31,46,0.98);
+            backdrop-filter: blur(12px);
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            z-index: 999;
+        }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav a {
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .mobile-nav a:hover { color: #d4a036; }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('hero.jpg') center center / cover no-repeat;
+        }
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26,31,46,0.88) 0%, rgba(26,31,46,0.6) 50%, rgba(26,31,46,0.75) 100%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 120px 24px 80px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(212,160,54,0.15);
+            border: 1px solid rgba(212,160,54,0.3);
+            border-radius: 50px;
+            padding: 8px 20px;
+            margin-bottom: 28px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #d4a036;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .hero-badge svg { width: 14px; height: 14px; }
+        .hero h1 {
+            font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 24px;
+            max-width: 700px;
+        }
+        .hero h1 span { color: #d4a036; }
+        .hero-text {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 540px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 64px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero-stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #d4a036;
+        }
+        .hero-stat-label {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+        .scroll-indicator {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+        .scroll-line {
+            width: 1px; height: 40px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+            animation: scrollPulse 2s infinite;
+        }
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== ABOUT ===== */
+        .about { background: #f8f6f1; }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .about-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about-image-accent {
+            position: absolute;
+            bottom: -8px; right: -8px;
+            width: 120px; height: 120px;
+            border: 3px solid #d4a036;
+            border-radius: 12px;
+            z-index: -1;
+        }
+        .about-text p {
+            color: #4a5568;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: #2d3748;
+        }
+        .about-feature-icon {
+            width: 28px; height: 28px;
+            background: rgba(212,160,54,0.12);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .about-feature-icon svg { width: 14px; height: 14px; color: #d4a036; }
+
+        /* ===== SERVICES ===== */
+        .services { background: #ffffff; }
+        .services-header { text-align: center; margin-bottom: 60px; }
+        .services-header .section-subtitle { margin: 0 auto; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e8e4dd;
+            border-radius: 12px;
+            padding: 36px 28px;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: #d4a036;
+            transform: scaleX(0);
+            transition: transform 0.35s ease;
+        }
+        .service-card:hover {
+            border-color: transparent;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(26,31,46,0.1);
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-icon {
+            width: 52px; height: 52px;
+            background: linear-gradient(135deg, rgba(212,160,54,0.12), rgba(212,160,54,0.05));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .service-icon svg { width: 24px; height: 24px; color: #d4a036; }
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1f2e;
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.7;
+        }
+        .service-card--image {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .service-card-img {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+        }
+        .service-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .service-card--image:hover .service-card-img img { transform: scale(1.05); }
+        .service-card-body { padding: 24px 28px 28px; }
+        .service-card-link {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #d4a036;
+            transition: gap 0.3s;
+        }
+
+        /* ===== WHY US ===== */
+        .why-us { background: #1a1f2e; color: #fff; }
+        .why-us .section-title { color: #fff; }
+        .why-us .section-subtitle { color: rgba(255,255,255,0.65); }
+        .why-us-header { text-align: center; margin-bottom: 60px; }
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        .why-card {
+            text-align: center;
+            padding: 40px 24px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.35s;
+        }
+        .why-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-4px);
+        }
+        .why-card-icon {
+            width: 64px; height: 64px;
+            background: rgba(212,160,54,0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .why-card-icon svg { width: 28px; height: 28px; color: #d4a036; }
+        .why-card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .why-card p {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.7;
+        }
+
+        /* ===== REVIEWS ===== */
+        .reviews { background: #f8f6f1; padding: 56px 0; }
+        .reviews-header { text-align: center; margin-bottom: 32px; }
+        .reviews-header .section-subtitle { margin: 0 auto; }
+        .reviews-header .section-title { font-size: clamp(1.3rem, 3vw, 1.8rem); margin-bottom: 8px; }
+        .reviews-track-wrapper { position: relative; overflow: hidden; }
+        .reviews-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        .review-card {
+            flex: 0 0 100%;
+            padding: 0 16px;
+            box-sizing: border-box;
+        }
+        @media (min-width: 768px) {
+            .review-card { flex: 0 0 50%; }
+        }
+        .review-card-inner {
+            background: #ffffff;
+            border: 1px solid #e8e4dd;
+            border-radius: 10px;
+            padding: 24px 24px 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .review-quote-icon {
+            position: absolute;
+            top: 14px; right: 18px;
+            font-size: 2.5rem;
+            font-family: Georgia, serif;
+            line-height: 1;
+            color: rgba(212,160,54,0.12);
+            pointer-events: none;
+        }
+        .review-stars { display: flex; gap: 2px; margin-bottom: 10px; }
+        .review-star {
+            width: 14px; height: 14px;
+            color: #d4a036;
+        }
+        .review-text {
+            font-size: 0.85rem;
+            color: #4a5568;
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 14px;
+        }
+        .review-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #e8e4dd;
+            padding-top: 12px;
+        }
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .review-avatar {
+            width: 32px; height: 32px;
+            background: #d4a036;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: #fff;
+        }
+        .review-author-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.82rem;
+            color: #1a1f2e;
+        }
+        .review-google-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #64748b;
+            transition: color 0.3s;
+        }
+        .review-google-link:hover { color: #d4a036; }
+        .review-google-link svg { width: 16px; height: 16px; }
+        .reviews-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        .reviews-btn {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            border: 1px solid #e8e4dd;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .reviews-btn:hover { border-color: #d4a036; background: rgba(212,160,54,0.06); }
+        .reviews-btn svg { width: 18px; height: 18px; color: #1a1f2e; }
+        .reviews-dots { display: flex; gap: 8px; }
+        .reviews-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #d9d5cc;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 0;
+        }
+        .reviews-dot.active { background: #d4a036; width: 24px; border-radius: 4px; }
+
+        /* ===== CONTACT ===== */
+        .contact { background: #f8f6f1; overflow: hidden; }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 64px;
+            max-width: 100%;
+        }
+        .contact-info h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #1a1f2e;
+        }
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .contact-item-icon {
+            width: 44px; height: 44px;
+            background: rgba(212,160,54,0.12);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .contact-item-icon svg { width: 20px; height: 20px; color: #d4a036; }
+        .contact-item-text { font-size: 0.92rem; color: #4a5568; line-height: 1.6; }
+        .contact-item-text strong { display: block; color: #1a1f2e; font-weight: 600; margin-bottom: 2px; }
+        .contact-item-text a { color: #d4a036; font-weight: 500; }
+        .contact-item-text a:hover { text-decoration: underline; }
+        .contact-form {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 24px rgba(26,31,46,0.06);
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2dfd8;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #1a1f2e;
+            background: #faf9f6;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #d4a036;
+            box-shadow: 0 0 0 3px rgba(212,160,54,0.12);
+        }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .contact-map {
+            margin-top: 32px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e8e4dd;
+            position: relative;
+            width: 100%;
+            padding-bottom: 40%;
+            height: 0;
+        }
+        .contact-map iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #12151f;
+            color: rgba(255,255,255,0.5);
+            padding: 48px 0 24px;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .footer-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .footer-text { font-size: 0.82rem; }
+        .footer-text a { color: #d4a036; }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 0.82rem; transition: color 0.3s; }
+        .footer-links a:hover { color: #d4a036; }
+        .footer-contact { display: flex; align-items: center; gap: 12px; }
+        .footer-contact-link { font-size: 0.85rem; color: rgba(255,255,255,0.7); transition: color 0.3s; }
+        .footer-contact-link:hover { color: #d4a036; }
+
+        /* ===== COOKIE CONSENT ===== */
+        .cookie-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .cookie-banner.visible { transform: translateY(0); }
+        .cookie-banner-inner { background: rgba(26,31,46,0.95); backdrop-filter: blur(8px); padding: 12px 24px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+        .cookie-banner h4 { display: none; }
+        .cookie-banner p { font-size: 0.78rem; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5; }
+        .cookie-banner p a { color: #d4a036; text-decoration: none; }
+        .cookie-banner p a:hover { text-decoration: underline; }
+        .cookie-buttons { display: flex; gap: 8px; flex-shrink: 0; }
+        .cookie-btn { padding: 6px 16px; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; border-radius: 4px; border: none; cursor: pointer; transition: all 0.25s; }
+        .cookie-btn-accept { background: #d4a036; color: #ffffff; }
+        .cookie-btn-accept:hover { background: #b8891e; }
+        .cookie-btn-decline { background: transparent; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.15); }
+        .cookie-btn-decline:hover { color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.3); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero-stats { gap: 32px; }
+        }
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .header-phone { display: none; }
+            .menu-toggle { display: flex; }
+            .section { padding: 72px 0; }
+            .hero { min-height: auto; }
+            .hero-content { padding: 100px 20px 40px; }
+            .hero-stats { flex-wrap: wrap; gap: 24px; }
+            .hero-stat { flex: 1; min-width: 120px; }
+            .scroll-indicator { position: relative; bottom: auto; left: auto; transform: none; margin: 32px auto 40px; }
+            .reviews { padding: 40px 0 32px; }
+            .about-grid { display: flex; flex-direction: column; }
+            .about-image { order: 2; }
+            .about-text { order: 1; }
+            .about-features { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .contact .container { padding: 0 16px; }
+            .contact-grid { gap: 32px; }
+            .contact-info, .contact-form { min-width: 0; width: 100%; box-sizing: border-box; }
+            .contact-form { padding: 16px; }
+            .cf-turnstile { max-width: 100%; overflow: hidden; }
+            .footer-inner { flex-direction: column; text-align: center; gap: 16px; }
+            .footer-contact { flex-direction: column; gap: 8px; }
+            .footer-contact span { display: none; }
+            .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+            .cookie-banner-inner { margin: 0 12px 12px; max-width: none; }
+        }
+        @media (max-width: 480px) {
+            .hero-content { padding: 100px 16px 30px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons .btn { width: 100%; justify-content: center; }
+            .contact-form { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <img src="logo.svg" alt="Etienne Terrassement" class="logo-img">
+            </a>
+            <nav class="nav">
+                <a href="#about" data-i18n="nav_about">À propos</a>
+                <a href="#services" data-i18n="nav_services">Services</a>
+                <a href="#why-us" data-i18n="nav_why">Pourquoi nous</a>
+                <a href="#reviews">Avis</a>
+                <a href="#contact" data-i18n="nav_contact">Contact</a>
+            </nav>
+            <div class="header-right">
+                <a href="#" class="header-phone" id="headerPhone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                    <span></span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="#about" data-i18n="nav_about">À propos</a>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#why-us" data-i18n="nav_why">Pourquoi nous</a>
+        <a href="#reviews">Avis</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <h1 data-i18n="hero_title">Votre expert en <span>terrassement</span> & génie civil</h1>
+            <p class="hero-text" data-i18n="hero_text">Basé à Môtiers, dans le Val-de-Travers, Etienne Terrassement réalise tous vos travaux de génie civil, terrassement et aménagements extérieurs avec professionnalisme et fiabilité.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary" data-i18n="hero_cta">Demander un devis</a>
+                <a href="#services" class="btn btn-outline" data-i18n="hero_cta2">Nos services</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">6</div>
+                    <div class="hero-stat-label" data-i18n="stat_services">Domaines d'expertise</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">100%</div>
+                    <div class="hero-stat-label" data-i18n="stat_local">Ancrage local</div>
+                </div>
+            </div>
+            <a href="#reviews" class="scroll-indicator">
+                <span data-i18n="scroll">Défiler</span>
+                <div class="scroll-line"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== REVIEWS ===== -->
+    <section class="reviews" id="reviews">
+        <div class="container">
+            <div class="reviews-header reveal">
+                <span class="section-label">Avis clients</span>
+                <h2 class="section-title">Ce que nos clients disent de nous</h2>
+            </div>
+            <div class="reviews-track-wrapper reveal">
+                <div class="reviews-track" id="reviewsTrack">
+                    <div class="review-card">
+                        <div class="review-card-inner">
+                            <span class="review-quote-icon">"</span>
+                            <div class="review-stars">
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <p class="review-text">Entreprise au top, patron très professionnel. Nous recommandons vivement cette entreprise. Nous n'hésiterons pas à retravailler avec dans le futur. Super travail un grand merci.</p>
+                            <div class="review-footer">
+                                <div class="review-author">
+                                    <div class="review-avatar">L</div>
+                                    <span class="review-author-name">Ludivine</span>
+                                </div>
+                                <a href="https://share.google/ldF3LMmZcpJqoJBBr" target="_blank" rel="noopener noreferrer" class="review-google-link">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                                    Voir sur Google
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card-inner">
+                            <span class="review-quote-icon">"</span>
+                            <div class="review-stars">
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <p class="review-text">Entreprise de terrassement super, très efficace dans le travail et très rapide également. Je recommande cette entreprise.</p>
+                            <div class="review-footer">
+                                <div class="review-author">
+                                    <div class="review-avatar">L</div>
+                                    <span class="review-author-name">Léa</span>
+                                </div>
+                                <a href="https://share.google/ITTQM1T0kcl8McQFX" target="_blank" rel="noopener noreferrer" class="review-google-link">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                                    Voir sur Google
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card-inner">
+                            <span class="review-quote-icon">"</span>
+                            <div class="review-stars">
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <p class="review-text">Au top, rapide et sympa. Je recommande !</p>
+                            <div class="review-footer">
+                                <div class="review-author">
+                                    <div class="review-avatar">C</div>
+                                    <span class="review-author-name">Cyril</span>
+                                </div>
+                                <a href="https://share.google/V9TqlJnAJg5wIXdB3" target="_blank" rel="noopener noreferrer" class="review-google-link">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                                    Voir sur Google
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-card-inner">
+                            <span class="review-quote-icon">"</span>
+                            <div class="review-stars">
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <svg class="review-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </div>
+                            <p class="review-text">Au top, super boulot !</p>
+                            <div class="review-footer">
+                                <div class="review-author">
+                                    <div class="review-avatar">A</div>
+                                    <span class="review-author-name">Aldo</span>
+                                </div>
+                                <a href="https://share.google/pLsHsyAXgM3vHbPY7" target="_blank" rel="noopener noreferrer" class="review-google-link">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                                    Voir sur Google
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-nav">
+                <button class="reviews-btn" id="reviewPrev" aria-label="Avis précédent">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <div class="reviews-dots" id="reviewsDots"></div>
+                <button class="reviews-btn" id="reviewNext" aria-label="Avis suivant">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal">
+                    <img src="photos/about-camion.jpg" alt="Camion Etienne Terrassement — Val de Travers">
+                    <div class="about-image-accent"></div>
+                </div>
+                <div class="about-text reveal">
+                    <span class="section-label" data-i18n="about_label">À propos</span>
+                    <h2 class="section-title" data-i18n="about_title">Un savoir-faire local au service de vos projets</h2>
+                    <p data-i18n="about_p1">Présent à Môtiers dans le Val de Travers, Etienne Terrassement est votre partenaire de confiance pour tous vos travaux de génie civil et d'aménagement extérieur.</p>
+                    <p data-i18n="about_p2">Notre équipe expérimentée met son expertise au service de vos projets, qu'il s'agisse de terrassement, de construction de chemins ou de pose de canalisations. Nous garantissons un travail soigné, dans le respect des délais et de votre budget.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                            </div>
+                            <span data-i18n="feat_quality">Travail soigné</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            </div>
+                            <span data-i18n="feat_time">Respect des délais</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <span data-i18n="feat_trust">Fiabilité</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                            </div>
+                            <span data-i18n="feat_local">Proximité locale</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="services-header reveal">
+                <span class="section-label" data-i18n="services_label">Nos services</span>
+                <h2 class="section-title" data-i18n="services_title">Des prestations complètes pour vos chantiers</h2>
+                <p class="section-subtitle" data-i18n="services_subtitle">De la préparation du terrain à la finition, nous vous accompagnons à chaque étape de votre projet.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1: Génie civil -->
+                <a href="genie-civil.html" class="service-card service-card--image reveal">
+                    <div class="service-card-img">
+                        <img src="photos/geniecivil-thumb.jpg" alt="Génie civil — Etienne Terrassement" loading="lazy">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 data-i18n="s1_title">Génie civil & Travaux publics</h3>
+                        <p data-i18n="s1_text">Réalisation de travaux de génie civil et de travaux publics pour vos projets de construction et d'infrastructure.</p>
+                        <span class="service-card-link">En savoir plus →</span>
+                    </div>
+                </a>
+                <!-- Service 2: Terrassement -->
+                <a href="terrassement.html" class="service-card service-card--image reveal">
+                    <div class="service-card-img">
+                        <img src="photos/terrassement-thumb.jpg" alt="Terrassement — Etienne Terrassement" loading="lazy">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 data-i18n="s2_title">Terrassement & Aménagements</h3>
+                        <p data-i18n="s2_text">Travaux de terrassement et aménagements extérieurs pour préparer vos terrains et créer vos espaces de vie.</p>
+                        <span class="service-card-link">En savoir plus →</span>
+                    </div>
+                </a>
+                <!-- Service 4: Chemins -->
+                <a href="chemins.html" class="service-card service-card--image reveal">
+                    <div class="service-card-img">
+                        <img src="photos/chemins-thumb.jpg" alt="Construction de chemins — Etienne Terrassement" loading="lazy">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 data-i18n="s4_title">Construction de chemins</h3>
+                        <p data-i18n="s4_text">Création et réfection de chemins et accès pour propriétés privées, domaines agricoles et espaces publics.</p>
+                        <span class="service-card-link">En savoir plus →</span>
+                    </div>
+                </a>
+                <!-- Service 5: Bitumineux -->
+                <a href="revetements-bitumineux.html" class="service-card service-card--image reveal">
+                    <div class="service-card-img">
+                        <img src="revetementbitumineux.png" alt="Revêtements bitumineux — Etienne Terrassement" loading="lazy">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 data-i18n="s5_title">Revêtements bitumineux</h3>
+                        <p data-i18n="s5_text">Pose de revêtements bitumineux pour routes, parkings et surfaces de circulation, garantissant résistance et longévité.</p>
+                        <span class="service-card-link">En savoir plus →</span>
+                    </div>
+                </a>
+                <!-- Service 6: Transport -->
+                <a href="transports.html" class="service-card service-card--image reveal">
+                    <div class="service-card-img">
+                        <img src="photos/transports-thumb.jpg" alt="Transports — Etienne Terrassement" loading="lazy">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 data-i18n="s6_title">Transports</h3>
+                        <p data-i18n="s6_text">Service de transport de matériaux et d'évacuation de déblais pour accompagner l'ensemble de vos chantiers.</p>
+                        <span class="service-card-link">En savoir plus →</span>
+                    </div>
+                </a>
+                <!-- Service 7: Canalisations -->
+                <a href="canalisations.html" class="service-card service-card--image reveal">
+                    <div class="service-card-img">
+                        <img src="photos/canalisations-thumb.jpg" alt="Canalisations — Etienne Terrassement" loading="lazy">
+                    </div>
+                    <div class="service-card-body">
+                        <h3 data-i18n="s7_title">Canalisations</h3>
+                        <p data-i18n="s7_text">Construction de canalisations d'eaux et industrielles, de la tranchée à la pose, en respectant les normes en vigueur.</p>
+                        <span class="service-card-link">En savoir plus →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY US ===== -->
+    <section class="section why-us" id="why-us">
+        <div class="container">
+            <div class="why-us-header reveal">
+                <span class="section-label" data-i18n="why_label">Pourquoi nous choisir</span>
+                <h2 class="section-title" data-i18n="why_title">La qualité et la confiance au cœur de chaque projet</h2>
+                <p class="section-subtitle" style="margin: 0 auto;" data-i18n="why_subtitle">Des valeurs solides pour des résultats durables.</p>
+            </div>
+            <div class="why-us-grid">
+                <div class="why-card reveal">
+                    <div class="why-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 data-i18n="why1_title">Expérience & Fiabilité</h3>
+                    <p data-i18n="why1_text">Un savoir-faire solide dans le domaine du terrassement et du génie civil dans le Val de Travers.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h3 data-i18n="why2_title">Proximité & Réactivité</h3>
+                    <p data-i18n="why2_text">Basés à Môtiers, nous intervenons rapidement dans tout le Val de Travers et ses environs.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                    </div>
+                    <h3 data-i18n="why3_title">Travail soigné</h3>
+                    <p data-i18n="why3_text">Chaque chantier est réalisé avec rigueur et attention, pour un résultat qui dure dans le temps.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                    </div>
+                    <h3 data-i18n="why4_title">Devis transparent</h3>
+                    <p data-i18n="why4_text">Des offres claires et détaillées, sans surprise. Nous respectons votre budget et vos attentes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="reveal" style="text-align:center; margin-bottom: 56px;">
+                <span class="section-label" data-i18n="contact_label">Contact</span>
+                <h2 class="section-title" data-i18n="contact_title">Parlons de votre projet</h2>
+                <p class="section-subtitle" style="margin: 0 auto;" data-i18n="contact_subtitle">Contactez-nous pour un devis gratuit ou pour toute question sur nos prestations.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h3 data-i18n="contact_info_title">Nos coordonnées</h3>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <strong data-i18n="contact_address_label">Adresse</strong>
+                            Etienne Terrassement<br>Grande Rue 46<br>2112 Môtiers NE
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <strong data-i18n="contact_phone_label">Téléphone</strong>
+                            <a href="#" id="contactPhone"></a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <strong data-i18n="contact_email_label">Email</strong>
+                            <a href="#" id="emailLink" data-u="etienne.terrassement24" data-d="gmail.com"></a>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <iframe src="https://maps.google.com/maps?q=Grande+Rue+46,+2112+M%C3%B4tiers,+Suisse&t=&z=16&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Etienne Terrassement — Môtiers"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form reveal">
+                    <form id="contactForm" method="POST" action="contact">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" data-i18n="form_name">Nom complet</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-i18n="form_phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="form_email">Adresse email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service" data-i18n="form_service">Service souhaité</label>
+                            <select id="service" name="service">
+                                <option value="" data-i18n="form_service_default">— Choisir un service —</option>
+                                <option value="genie-civil" data-i18n="s1_title">Génie civil & Travaux publics</option>
+                                <option value="terrassement" data-i18n="s2_title">Terrassement & Aménagements</option>
+                                <option value="chemins" data-i18n="s4_title">Construction de chemins</option>
+                                <option value="bitumineux" data-i18n="s5_title">Revêtements bitumineux</option>
+                                <option value="transports" data-i18n="s6_title">Transports</option>
+                                <option value="canalisations" data-i18n="s7_title">Canalisations</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="form_message">Votre message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <!-- Honeypot -->
+                        <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                            <input type="text" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+                        <!-- Cloudflare Turnstile -->
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAADWFuOwngsGxYCKE" data-theme="light"></div>
+                        <div id="formMsg" style="display:none;margin-bottom:16px;padding:12px 16px;border-radius:8px;font-size:0.9rem;"></div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" data-i18n="form_submit">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">Etienne Terrassement</div>
+                <div class="footer-contact">
+                    <a href="#" id="footerPhone" class="footer-contact-link"></a>
+                    <span style="color:rgba(255,255,255,0.25);">|</span>
+                    <a href="#" id="footerEmail" class="footer-contact-link"></a>
+                </div>
+                <p class="footer-text">&copy; 2026 Etienne Terrassement — <span data-i18n="footer_rights">Tous droits réservés</span><br>Site réalisé par <a href="https://carnotz.ch" target="_blank" rel="noopener noreferrer">Carnotz Digital</a></p>
+                <div class="footer-links">
+                    <a href="#about" data-i18n="nav_about">À propos</a>
+                    <a href="#services" data-i18n="nav_services">Services</a>
+                    <a href="#contact" data-i18n="nav_contact">Contact</a>
+                    <a href="politique-donnees.html" data-i18n="footer_privacy">Traitement des données</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== COOKIE CONSENT ===== -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-banner-inner">
+            <h4>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+                <span data-i18n="cookie_title">Cookies &amp; confidentialité</span>
+            </h4>
+            <p>
+                <span data-i18n="cookie_text">Ce site utilise des cookies pour améliorer votre expérience de navigation. En poursuivant, vous acceptez leur utilisation.</span>
+                <a href="politique-donnees.html" data-i18n="cookie_link">En savoir plus</a>
+            </p>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-accept" id="cookieAccept" data-i18n="cookie_accept">Accepter</button>
+                <button class="cookie-btn cookie-btn-decline" id="cookieDecline" data-i18n="cookie_decline">Refuser</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+    (function() {
+        'use strict';
+
+        /* ---- TRANSLATIONS ---- */
+        const T = {
+            fr: {
+                nav_about: "À propos",
+                nav_services: "Services",
+                nav_why: "Pourquoi nous",
+                nav_contact: "Contact",
+                hero_title: 'Votre expert en <span>terrassement</span> & génie civil',
+                hero_text: "Basé à Môtiers, dans le Val-de-Travers, Etienne Terrassement réalise tous vos travaux de génie civil, terrassement et aménagements extérieurs avec professionnalisme et fiabilité.",
+                hero_cta: "Demander un devis",
+                hero_cta2: "Nos services",
+                stat_services: "Domaines d'expertise",
+                stat_local: "Ancrage local",
+                scroll: "Défiler",
+                about_label: "À propos",
+                about_title: "Un savoir-faire local au service de vos projets",
+                about_p1: "Présent à Môtiers dans le Val de Travers, Etienne Terrassement est votre partenaire de confiance pour tous vos travaux de génie civil et d'aménagement extérieur.",
+                about_p2: "Notre équipe expérimentée met son expertise au service de vos projets, qu'il s'agisse de terrassement, de construction de chemins ou de pose de canalisations. Nous garantissons un travail soigné, dans le respect des délais et de votre budget.",
+                feat_quality: "Travail soigné",
+                feat_time: "Respect des délais",
+                feat_trust: "Fiabilité",
+                feat_local: "Proximité locale",
+                services_label: "Nos services",
+                services_title: "Des prestations complètes pour vos chantiers",
+                services_subtitle: "De la préparation du terrain à la finition, nous vous accompagnons à chaque étape de votre projet.",
+                s1_title: "Génie civil & Travaux publics",
+                s1_text: "Réalisation de travaux de génie civil et de travaux publics pour vos projets de construction et d'infrastructure.",
+                s2_title: "Terrassement & Aménagements",
+                s2_text: "Travaux de terrassement et aménagements extérieurs pour préparer vos terrains et créer vos espaces de vie.",
+                s4_title: "Construction de chemins",
+                s4_text: "Création et réfection de chemins et accès pour propriétés privées, domaines agricoles et espaces publics.",
+                s5_title: "Revêtements bitumineux",
+                s5_text: "Pose de revêtements bitumineux pour routes, parkings et surfaces de circulation, garantissant résistance et longévité.",
+                s6_title: "Transports",
+                s6_text: "Service de transport de matériaux et d'évacuation de déblais pour accompagner l'ensemble de vos chantiers.",
+                s7_title: "Canalisations",
+                s7_text: "Construction de canalisations d'eaux et industrielles, de la tranchée à la pose, en respectant les normes en vigueur.",
+                why_label: "Pourquoi nous choisir",
+                why_title: "La qualité et la confiance au cœur de chaque projet",
+                why_subtitle: "Des valeurs solides pour des résultats durables.",
+                why1_title: "Expérience & Fiabilité",
+                why1_text: "Un savoir-faire solide dans le domaine du terrassement et du génie civil dans le Val de Travers.",
+                why2_title: "Proximité & Réactivité",
+                why2_text: "Basés à Môtiers, nous intervenons rapidement dans tout le Val de Travers et ses environs.",
+                why3_title: "Travail soigné",
+                why3_text: "Chaque chantier est réalisé avec rigueur et attention, pour un résultat qui dure dans le temps.",
+                why4_title: "Devis transparent",
+                why4_text: "Des offres claires et détaillées, sans surprise. Nous respectons votre budget et vos attentes.",
+                contact_label: "Contact",
+                contact_title: "Parlons de votre projet",
+                contact_subtitle: "Contactez-nous pour un devis gratuit ou pour toute question sur nos prestations.",
+                contact_info_title: "Nos coordonnées",
+                contact_address_label: "Adresse",
+                contact_phone_label: "Téléphone",
+                contact_email_label: "Email",
+                form_name: "Nom complet",
+                form_phone: "Téléphone",
+                form_email: "Adresse email",
+                form_service: "Service souhaité",
+                form_service_default: "— Choisir un service —",
+                form_message: "Votre message",
+                form_submit: "Envoyer la demande",
+                footer_rights: "Tous droits réservés",
+                footer_privacy: "Traitement des données",
+                cookie_title: "Cookies & confidentialité",
+                cookie_text: "Ce site utilise des cookies pour améliorer votre expérience de navigation. En poursuivant, vous acceptez leur utilisation.",
+                cookie_link: "En savoir plus",
+                cookie_accept: "Accepter",
+                cookie_decline: "Refuser"
+            },
+        };
+
+        let currentLang = 'fr';
+
+        function setLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n');
+                if (T[lang] && T[lang][key] !== undefined) {
+                    if (key === 'hero_title') {
+                        el.innerHTML = T[lang][key];
+                    } else if (el.tagName === 'OPTION') {
+                        el.textContent = T[lang][key];
+                    } else {
+                        el.textContent = T[lang][key];
+                    }
+                }
+            });
+            document.querySelectorAll('.lang-btn').forEach(function(btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+        }
+
+
+        /* ---- HEADER SCROLL ---- */
+        var header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        }, { passive: true });
+
+        /* ---- MOBILE MENU ---- */
+        var menuToggle = document.getElementById('menuToggle');
+        var mobileNav = document.getElementById('mobileNav');
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('active');
+            mobileNav.classList.toggle('open');
+        });
+        mobileNav.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                mobileNav.classList.remove('open');
+            });
+        });
+
+        /* ---- SCROLL REVEAL ---- */
+        function revealOnScroll() {
+            var reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(function(el) {
+                var top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 80) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll, { passive: true });
+        revealOnScroll();
+
+        /* ---- SMOOTH ANCHOR OFFSET ---- */
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var id = this.getAttribute('href').slice(1);
+                var target = document.getElementById(id);
+                if (target) {
+                    e.preventDefault();
+                    var y = target.getBoundingClientRect().top + window.pageYOffset - 72;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+            });
+        });
+
+        /* ---- REVIEWS CAROUSEL ---- */
+        (function() {
+            var track = document.getElementById('reviewsTrack');
+            var cards = track.querySelectorAll('.review-card');
+            var dotsContainer = document.getElementById('reviewsDots');
+            var prevBtn = document.getElementById('reviewPrev');
+            var nextBtn = document.getElementById('reviewNext');
+            var current = 0;
+            var perView = window.innerWidth >= 768 ? 2 : 1;
+            var maxIndex = Math.max(0, cards.length - perView);
+            var autoTimer;
+
+            function buildDots() {
+                dotsContainer.innerHTML = '';
+                for (var i = 0; i <= maxIndex; i++) {
+                    var dot = document.createElement('button');
+                    dot.className = 'reviews-dot' + (i === current ? ' active' : '');
+                    dot.setAttribute('aria-label', 'Avis ' + (i + 1));
+                    dot.dataset.index = i;
+                    dot.addEventListener('click', function() { goTo(parseInt(this.dataset.index)); });
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function goTo(index) {
+                current = Math.max(0, Math.min(index, maxIndex));
+                var pct = current * (100 / perView);
+                track.style.transform = 'translateX(-' + pct + '%)';
+                var dots = dotsContainer.querySelectorAll('.reviews-dot');
+                dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+                resetAuto();
+            }
+
+            function resetAuto() {
+                clearInterval(autoTimer);
+                autoTimer = setInterval(function() { goTo(current >= maxIndex ? 0 : current + 1); }, 5000);
+            }
+
+            prevBtn.addEventListener('click', function() { goTo(current <= 0 ? maxIndex : current - 1); });
+            nextBtn.addEventListener('click', function() { goTo(current >= maxIndex ? 0 : current + 1); });
+
+            window.addEventListener('resize', function() {
+                var newPerView = window.innerWidth >= 768 ? 2 : 1;
+                if (newPerView !== perView) {
+                    perView = newPerView;
+                    maxIndex = Math.max(0, cards.length - perView);
+                    if (current > maxIndex) current = maxIndex;
+                    buildDots();
+                    goTo(current);
+                }
+            });
+
+            buildDots();
+            resetAuto();
+        })();
+
+        /* ---- CONTACT FORM ---- */
+        (function() {
+            var form = document.getElementById('contactForm');
+            var msg = document.getElementById('formMsg');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                msg.style.display = 'none';
+                var btn = form.querySelector('button[type="submit"]');
+                btn.disabled = true;
+                btn.textContent = 'Envoi en cours...';
+                var fd = new FormData(form);
+                fetch('contact', { method: 'POST', body: fd })
+                    .then(function(r) {
+                        if (!r.ok) { throw new Error('HTTP ' + r.status); }
+                        return r.text();
+                    })
+                    .then(function(text) {
+                        try { var data = JSON.parse(text); } catch(e) { console.error('Reponse brute:', text); throw new Error('Reponse invalide'); }
+                        return data;
+                    })
+                    .then(function(data) {
+                        msg.style.display = 'block';
+                        if (data.success) {
+                            msg.style.background = 'rgba(16,185,129,0.1)';
+                            msg.style.color = '#059669';
+                            msg.textContent = data.message || 'Message envoyé avec succès !';
+                            form.reset();
+                            if (typeof turnstile !== 'undefined') turnstile.reset();
+                        } else {
+                            msg.style.background = 'rgba(239,68,68,0.1)';
+                            msg.style.color = '#dc2626';
+                            msg.textContent = data.message || 'Une erreur est survenue.';
+                        }
+                    })
+                    .catch(function() {
+                        msg.style.display = 'block';
+                        msg.style.background = 'rgba(239,68,68,0.1)';
+                        msg.style.color = '#dc2626';
+                        msg.textContent = 'Erreur de connexion. Veuillez réessayer.';
+                    })
+                    .finally(function() {
+                        btn.disabled = false;
+                        btn.textContent = 'Envoyer la demande';
+                    });
+            });
+        })();
+
+        /* ---- OBFUSCATION EMAIL & TEL ---- */
+        (function() {
+            var p1 = '+41', p2 = '79', p3 = '855', p4 = '92', p5 = '33';
+            var tel = p1 + p2 + p3 + p4 + p5;
+            var telDisplay = p1 + ' ' + p2 + ' ' + p3 + ' ' + p4 + ' ' + p5;
+
+            var hp = document.getElementById('headerPhone');
+            if (hp) { hp.href = 'tel:' + tel; hp.querySelector('span').textContent = telDisplay; }
+
+            var cp = document.getElementById('contactPhone');
+            if (cp) { cp.href = 'tel:' + tel; cp.textContent = telDisplay; }
+
+            var el = document.getElementById('emailLink');
+            var addr = el ? el.getAttribute('data-u') + '@' + el.getAttribute('data-d') : '';
+            if (el) {
+                el.href = 'mai' + 'lto:' + addr;
+                el.textContent = addr;
+            }
+
+            var fp = document.getElementById('footerPhone');
+            if (fp) { fp.href = 'tel:' + tel; fp.textContent = telDisplay; }
+
+            var fe = document.getElementById('footerEmail');
+            if (fe) { fe.href = 'mai' + 'lto:' + addr; fe.textContent = addr; }
+        })();
+
+        /* ---- COOKIE CONSENT ---- */
+        var cookieBanner = document.getElementById('cookieBanner');
+        var cookieAccept = document.getElementById('cookieAccept');
+        var cookieDecline = document.getElementById('cookieDecline');
+        if (cookieBanner) {
+            if (!localStorage.getItem('et-cookies')) {
+                setTimeout(function() { cookieBanner.classList.add('visible'); }, 1500);
+            }
+            cookieAccept.addEventListener('click', function() {
+                localStorage.setItem('et-cookies', 'accepted');
+                cookieBanner.classList.remove('visible');
+            });
+            cookieDecline.addEventListener('click', function() {
+                localStorage.setItem('et-cookies', 'declined');
+                cookieBanner.classList.remove('visible');
+            });
+        }
+
+    })();
+    </script>
+</body>
+</html>
