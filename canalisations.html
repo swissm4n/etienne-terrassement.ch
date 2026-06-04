@@ -206,17 +206,30 @@
             object-fit: cover;
             border-radius: 8px;
         }
-        .slide-label {
+        .slide-caption {
             position: absolute;
-            bottom: 12px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: #fff;
+            font-size: 0.88rem;
+            font-family: 'Inter', sans-serif;
+            padding: 40px 16px 14px;
+            z-index: 1;
+        }
+        .slide-label {
+            display: none;
+            position: absolute;
+            top: 12px;
             left: 12px;
             background: rgba(0,0,0,0.75);
             color: #fff;
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             font-family: monospace;
-            padding: 4px 10px;
+            padding: 3px 8px;
             border-radius: 4px;
-            z-index: 1;
+            z-index: 2;
         }
         .gallery-nav {
             display: flex;
@@ -307,14 +320,20 @@
         .btn-primary:hover { background: #b8891e; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,160,54,0.3); }
 
         /* Footer */
-        .page-footer {
-            background: #12151f;
-            color: rgba(255,255,255,0.5);
-            padding: 32px 0;
-            text-align: center;
-            font-size: 0.82rem;
-        }
-        .page-footer a { color: #d4a036; }
+        .footer { background: #12151f; color: rgba(255,255,255,0.5); padding: 48px 0 24px; }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .footer-logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: #fff; }
+        .footer-text { font-size: 0.82rem; }
+        .footer-text a { color: #d4a036; }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 0.82rem; transition: color 0.3s; }
+        .footer-links a:hover { color: #d4a036; }
+        .footer-contact { display: flex; align-items: center; gap: 12px; }
+        .footer-contact-link { font-size: 0.85rem; color: rgba(255,255,255,0.7); transition: color 0.3s; }
+        .footer-contact-link:hover { color: #d4a036; }
+        .footer-instagram { color: rgba(255,255,255,0.5); transition: color 0.3s; }
+        .footer-instagram:hover { color: #d4a036; }
+        .footer-instagram svg { width: 20px; height: 20px; }
 
         @media (max-width: 768px) {
             .nav { display: none; }
@@ -322,6 +341,10 @@
             .menu-toggle { display: flex; }
             .service-hero { height: 260px; }
             .service-cta { padding: 28px 20px; }
+            .footer-inner { flex-direction: column; text-align: center; gap: 16px; }
+            .footer-contact { flex-direction: column; gap: 8px; }
+            .footer-contact span { display: none; }
+            .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
         }
     </style>
 </head>
@@ -385,20 +408,23 @@
             <div class="gallery-wrapper">
                 <div class="gallery-track" id="galleryTrack">
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0085.jpg" alt="Canalisation — Etienne Terrassement">
-                        <span class="slide-label">canalisation-0085.jpg</span>
+                        <img src="photos/canalisation-0085.jpg" alt="Fouille de 90m — Etienne Terrassement">
+                        <span class="slide-caption">Fouille de 90m</span>
+                        <span class="slide-label">canalisation-0085</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0091.jpg" alt="Canalisation — Etienne Terrassement">
-                        <span class="slide-label">canalisation-0091.jpg</span>
+                        <img src="photos/canalisation-0091.jpg" alt="Réalisation d'une fouille pour pompe à chaleur — Etienne Terrassement">
+                        <span class="slide-caption">Réalisation d'une fouille pour pompe à chaleur</span>
+                        <span class="slide-label">canalisation-0091</span>
                     </div>
                     <div class="gallery-slide">
                         <img src="photos/canalisation-0032.jpg" alt="Canalisation — Etienne Terrassement">
-                        <span class="slide-label">canalisation-0032.jpg</span>
+                        <span class="slide-label">canalisation-0032</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0043.jpg" alt="Canalisation — Etienne Terrassement">
-                        <span class="slide-label">canalisation-0043.jpg</span>
+                        <img src="photos/canalisation-0043.jpg" alt="Ouverture d'un ruisseau et agrandissement — Etienne Terrassement">
+                        <span class="slide-caption">Ouverture d'un ruisseau et agrandissement</span>
+                        <span class="slide-label">canalisation-0043</span>
                     </div>
                 </div>
             </div>
@@ -425,8 +451,27 @@
         </div>
     </div>
 
-    <footer class="page-footer">
-        <p>&copy; 2026 Etienne Terrassement — <a href="https://carnotz.ch" target="_blank" rel="noopener noreferrer">Carnotz Digital</a></p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">Etienne Terrassement</div>
+                <div class="footer-contact">
+                    <a href="#" id="footerPhone" class="footer-contact-link"></a>
+                    <span style="color:rgba(255,255,255,0.25);">|</span>
+                    <a href="#" id="footerEmail" class="footer-contact-link"></a>
+                    <span style="color:rgba(255,255,255,0.25);">|</span>
+                    <a href="https://www.instagram.com/_etienne_terrassement_/" target="_blank" rel="noopener noreferrer" class="footer-instagram" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                </div>
+                <p class="footer-text">&copy; 2026 Etienne Terrassement — Tous droits réservés<br>Site réalisé par <a href="https://carnotz.ch" target="_blank" rel="noopener noreferrer">Carnotz Digital</a></p>
+                <div class="footer-links">
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="politique-donnees.html">Traitement des données</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -439,6 +484,11 @@
             var p1='079',p2=' ',p3='855',p4=' 92',p5=' 33';
             hp.querySelector('span').textContent = p1+p2+p3+p4+p5;
             hp.href = 'tel:+41' + '79' + '855' + '92' + '33';
+            var fp=document.getElementById('footerPhone');
+            if(fp){fp.href='tel:+41'+'79'+'855'+'92'+'33';fp.textContent='+41 79 855 92 33';}
+            var fe=document.getElementById('footerEmail');
+            var eu='etienne.terrassement24',ed='gmail.com';
+            if(fe){fe.href='mai'+'lto:'+eu+'@'+ed;fe.textContent=eu+'@'+ed;}
         })();
         (function() {
             var track = document.getElementById('galleryTrack');
