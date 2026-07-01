@@ -110,13 +110,47 @@ foreach ([$name, $email, $phone, $service] as $field) {
     }
 }
 
+// ── Filtrage contenu spam ──
+$spamKeywords = [
+    'SEO', 'backlink', 'link building', 'rank higher', 'page rank', 'google ranking',
+    'web design service', 'website redesign', 'web development service',
+    'digital marketing', 'online marketing', 'social media marketing',
+    'lead generation', 'boost your', 'grow your business',
+    'free consultation', 'free audit', 'free quote',
+    'guaranteed results', 'first page', 'top of google',
+    'affordable website', 'professional website', 'custom website',
+    'increase traffic', 'increase sales', 'more customers',
+    'marketing agency', 'marketing company', 'marketing team',
+    'offshore', 'outsource', 'dedicated developer',
+    'wordpress', 'shopify', 'wix',
+    'unsubscribe', 'opt out', 'opt-out',
+    'cryptocurrency', 'crypto', 'bitcoin', 'forex', 'casino',
+    'viagra', 'cialis', 'pharmacy',
+];
+$contentLower = mb_strtolower($name . ' ' . $message, 'UTF-8');
+$spamHits = 0;
+foreach ($spamKeywords as $kw) {
+    if (mb_stripos($contentLower, mb_strtolower($kw, 'UTF-8')) !== false) {
+        $spamHits++;
+    }
+}
+if ($spamHits >= 2) {
+    echo json_encode(['success' => true, 'message' => 'Message envoyé avec succès !']);
+    exit;
+}
+
+// ── Rejet si trop de liens ──
+if (preg_match_all('/https?:\/\//i', $message, $m) >= 2) {
+    echo json_encode(['success' => true, 'message' => 'Message envoyé avec succès !']);
+    exit;
+}
+
 // ── Construire le corps du mail ──
 $serviceLabels = [
     'genie-civil'   => 'Génie civil & Travaux publics',
     'terrassement'  => 'Terrassement & Aménagements',
     'chemins'       => 'Construction de chemins',
     'bitumineux'    => 'Revêtements bitumineux',
-    'transports'    => 'Transports',
     'canalisations' => 'Canalisations',
     'autre'         => 'Autre',
 ];
