@@ -13,349 +13,15 @@
     <meta property="og:title" content="Canalisations — Etienne Terrassement | Val de Travers">
     <meta property="og:description" content="Travaux de terrassement pour canalisations à Môtiers, Val de Travers. Tranchées, fouilles, drainage et remise en état. Devis gratuit.">
     <meta property="og:url" content="https://etienne-terrassement.ch/canalisations">
-    <meta property="og:image" content="https://etienne-terrassement.ch/hero.jpg">
+    <meta property="og:image" content="https://etienne-terrassement.ch/og-image.jpg">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body {
-            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-            color: #1a1f2e;
-            background: #ffffff;
-            line-height: 1.6;
-        }
-        img { max-width: 100%; height: auto; display: block; }
-        a { text-decoration: none; color: inherit; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; line-height: 1.2; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            padding: 0 24px;
-            background: rgba(26,31,46,0.97);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
-        }
-        .header-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 72px;
-        }
-        .logo { display: flex; align-items: center; }
-        .logo-img { height: 52px; width: auto; }
-        .nav { display: flex; align-items: center; gap: 32px; }
-        .nav a {
-            color: rgba(255,255,255,0.85);
-            font-size: 0.88rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.3s;
-            position: relative;
-        }
-        .nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px; left: 0;
-            width: 0; height: 2px;
-            background: #d4a036;
-            transition: width 0.3s;
-        }
-        .nav a:hover { color: #d4a036; }
-        .nav a:hover::after { width: 100%; }
-        .header-right { display: flex; align-items: center; gap: 16px; }
-        .header-phone {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: #d4a036;
-            font-weight: 600;
-            font-size: 0.88rem;
-        }
-        .header-phone svg { width: 16px; height: 16px; }
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-        }
-        .menu-toggle span {
-            width: 24px; height: 2px;
-            background: #fff;
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 72px; left: 0; right: 0; bottom: 0;
-            background: rgba(26,31,46,0.98);
-            backdrop-filter: blur(12px);
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 28px;
-            z-index: 999;
-        }
-        .mobile-nav.open { display: flex; }
-        .mobile-nav a {
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        .mobile-nav a:hover { color: #d4a036; }
-
-        /* Hero image */
-        .service-hero {
-            margin-top: 72px;
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            position: relative;
-        }
-        .service-hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .service-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            height: 120px;
-            background: linear-gradient(to top, #ffffff, transparent);
-        }
-
-        /* Content */
-        .service-content {
-            padding: 48px 0 80px;
-        }
-        .service-content h1 {
-            font-size: clamp(1.8rem, 4vw, 2.4rem);
-            font-weight: 800;
-            color: #1a1f2e;
-            margin-bottom: 8px;
-        }
-        .service-content .subtitle {
-            font-size: 1rem;
-            color: #d4a036;
-            font-weight: 600;
-            margin-bottom: 32px;
-        }
-        .service-content p {
-            font-size: 1rem;
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        .service-content h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #1a1f2e;
-            margin: 40px 0 16px;
-        }
-        .service-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 32px;
-        }
-        .service-list li {
-            padding: 10px 0;
-            font-size: 0.95rem;
-            color: #4a5568;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            border-bottom: 1px solid #f0ede6;
-        }
-        .service-list li::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: #d4a036;
-            border-radius: 50%;
-            flex-shrink: 0;
-            margin-top: 8px;
-        }
-
-        /* Gallery */
-        .gallery-wrapper {
-            overflow: hidden;
-            border-radius: 8px;
-        }
-        .gallery-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-        .gallery-slide {
-            flex: 0 0 100%;
-            padding: 0;
-        }
-        .gallery-slide {
-            position: relative;
-        }
-        .gallery-slide img {
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .slide-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            color: #fff;
-            font-size: 0.88rem;
-            font-family: 'Inter', sans-serif;
-            padding: 40px 16px 14px;
-            z-index: 1;
-        }
-        .slide-label {
-            display: none;
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(0,0,0,0.75);
-            color: #fff;
-            font-size: 0.78rem;
-            font-family: monospace;
-            padding: 3px 8px;
-            border-radius: 4px;
-            z-index: 2;
-        }
-        .gallery-nav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 16px;
-        }
-        .gallery-btn {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 1px solid #e8e4dd;
-            background: #fff;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: border-color 0.3s;
-        }
-        .gallery-btn:hover {
-            border-color: #d4a036;
-        }
-        .gallery-btn svg {
-            width: 16px;
-            height: 16px;
-            stroke: #1a1f2e;
-            fill: none;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-        .gallery-dots {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-        }
-        .gallery-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #d9d5cc;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-            transition: all 0.3s;
-        }
-        .gallery-dot.active {
-            background: #d4a036;
-            width: 24px;
-            border-radius: 4px;
-        }
-
-        /* CTA */
-        .service-cta {
-            margin-top: 48px;
-            background: #f8f6f1;
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-        }
-        .service-cta h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .service-cta p {
-            color: #64748b;
-            font-size: 0.92rem;
-            margin-bottom: 24px;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 32px;
-            border-radius: 6px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary { background: #d4a036; color: #fff; }
-        .btn-primary:hover { background: #b8891e; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,160,54,0.3); }
-
-        /* Footer */
-        .footer { background: #12151f; color: rgba(255,255,255,0.5); padding: 48px 0 24px; }
-        .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-        .footer-logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem; color: #fff; }
-        .footer-text { font-size: 0.82rem; }
-        .footer-text a { color: #d4a036; }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-links a { font-size: 0.82rem; transition: color 0.3s; }
-        .footer-links a:hover { color: #d4a036; }
-        .footer-contact { display: flex; align-items: center; gap: 12px; }
-        .footer-contact-link { font-size: 0.85rem; color: rgba(255,255,255,0.7); transition: color 0.3s; }
-        .footer-contact-link:hover { color: #d4a036; }
-        .footer-instagram { color: rgba(255,255,255,0.5); transition: color 0.3s; }
-        .footer-instagram:hover { color: #d4a036; }
-        .footer-instagram svg { width: 20px; height: 20px; }
-
-        @media (max-width: 768px) {
-            .nav { display: none; }
-            .header-phone { display: none; }
-            .menu-toggle { display: flex; }
-            .service-hero { height: 260px; }
-            .service-cta { padding: 28px 20px; }
-            .footer-inner { flex-direction: column; text-align: center; gap: 16px; }
-            .footer-contact { flex-direction: column; gap: 8px; }
-            .footer-contact span { display: none; }
-            .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
-        }
-    </style>
+    <link rel="stylesheet" href="subpage.css">
 </head>
 <body>
     <header class="header">
@@ -388,7 +54,7 @@
     </nav>
 
     <div class="service-hero">
-        <img src="photos/canalisations-thumb.jpg" alt="Canalisations — Etienne Terrassement">
+        <img src="photos/canalisations-thumb.jpg" alt="Canalisations — Etienne Terrassement" width="1440" height="1440">
     </div>
 
     <div class="container">
@@ -416,52 +82,52 @@
             <div class="gallery-wrapper">
                 <div class="gallery-track" id="galleryTrack">
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0085.jpg" alt="Fouille de 90m — Etienne Terrassement">
+                        <img loading="lazy" src="photos/canalisation-0085.jpg" alt="Fouille de 90m — Etienne Terrassement">
                         <span class="slide-caption">Fouille de 90m</span>
                         <span class="slide-label">canalisation-0085</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0111.jpg" alt="Fouille de 90m — Etienne Terrassement">
+                        <img loading="lazy" src="photos/canalisation-0111.jpg" alt="Fouille de 90m — Etienne Terrassement">
                         <span class="slide-caption">Fouille de 90m</span>
                         <span class="slide-label">canalisation-0111</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0112.jpg" alt="Fouille de 90m — Etienne Terrassement">
+                        <img loading="lazy" src="photos/canalisation-0112.jpg" alt="Fouille de 90m — Etienne Terrassement">
                         <span class="slide-caption">Fouille de 90m</span>
                         <span class="slide-label">canalisation-0112</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0113.jpg" alt="Fouille de 90m rebouchée — Etienne Terrassement">
+                        <img loading="lazy" src="photos/canalisation-0113.jpg" alt="Fouille de 90m rebouchée — Etienne Terrassement">
                         <span class="slide-caption">Fouille de 90m rebouchée</span>
                         <span class="slide-label">canalisation-0113</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0091.jpg" alt="Réalisation d'une fouille pour pompe à chaleur — Etienne Terrassement">
+                        <img loading="lazy" src="photos/canalisation-0091.jpg" alt="Réalisation d'une fouille pour pompe à chaleur — Etienne Terrassement">
                         <span class="slide-caption">Réalisation d'une fouille pour pompe à chaleur</span>
                         <span class="slide-label">canalisation-0091</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0110.jpg" alt="Pompe à chaleur — Etienne Terrassement">
+                        <img loading="lazy" src="photos/canalisation-0110.jpg" alt="Pompe à chaleur — Etienne Terrassement">
                         <span class="slide-caption">Pompe à chaleur</span>
                         <span class="slide-label">canalisation-0110</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0114.jpg" alt="Fouille le long d'un chemin — Etienne Terrassement">
+                        <img loading="lazy" src="photos/canalisation-0114.jpg" alt="Fouille le long d'un chemin — Etienne Terrassement">
                         <span class="slide-caption">Fouille le long d'un chemin</span>
                         <span class="slide-label">canalisation-0114</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0115.jpg" alt="Fouille le long d'un chemin, rebouchée — Etienne Terrassement">
+                        <img loading="lazy" src="photos/canalisation-0115.jpg" alt="Fouille le long d'un chemin, rebouchée — Etienne Terrassement">
                         <span class="slide-caption">Fouille le long d'un chemin, rebouchée</span>
                         <span class="slide-label">canalisation-0115</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0116.jpg" alt="Passage sous clôture — Etienne Terrassement">
+                        <img loading="lazy" src="photos/canalisation-0116.jpg" alt="Passage sous clôture — Etienne Terrassement">
                         <span class="slide-caption">Passage sous clôture</span>
                         <span class="slide-label">canalisation-0116</span>
                     </div>
                     <div class="gallery-slide">
-                        <img src="photos/canalisation-0117.jpg" alt="Tranchée pour connexion au regard — Etienne Terrassement">
+                        <img loading="lazy" src="photos/canalisation-0117.jpg" alt="Tranchée pour connexion au regard — Etienne Terrassement">
                         <span class="slide-caption">Tranchée pour connexion au regard</span>
                         <span class="slide-label">canalisation-0117</span>
                     </div>

@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
     <title>Politique de traitement des données — Etienne Terrassement</title>
     <meta name="description" content="Politique de traitement des données personnelles d'Etienne Terrassement, Môtiers.">
+    <link rel="canonical" href="https://etienne-terrassement.ch/politique-donnees">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CH">
+    <meta property="og:site_name" content="Etienne Terrassement">
+    <meta property="og:title" content="Politique de traitement des données — Etienne Terrassement">
+    <meta property="og:description" content="Politique de traitement des données personnelles d'Etienne Terrassement, Môtiers.">
+    <meta property="og:url" content="https://etienne-terrassement.ch/politique-donnees">
+    <meta property="og:image" content="https://etienne-terrassement.ch/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -73,8 +86,8 @@
             Grande Rue 46<br>
             2112 Môtiers NE<br>
             Suisse<br>
-            Tél. : <a href="tel:+41798559233">+41 79 855 92 33</a><br>
-            E-mail : <a href="mailto:eric.etienne2001@gmail.com">eric.etienne2001@gmail.com</a>
+            Tél. : <a href="#" id="privacyPhone"></a><br>
+            E-mail : <a href="#" id="privacyEmail" data-u="etienne.terrassement24" data-d="gmail.com"></a>
         </p>
 
         <h2>2. Données collectées</h2>
@@ -124,7 +137,7 @@
             <li>Droit d'<strong>opposition</strong> au traitement.</li>
             <li>Droit à la <strong>portabilité</strong> de vos données.</li>
         </ul>
-        <p>Pour exercer ces droits, contactez-nous à l'adresse : <a href="mailto:eric.etienne2001@gmail.com">eric.etienne2001@gmail.com</a></p>
+        <p>Pour exercer ces droits, contactez-nous à l'adresse indiquée ci-dessus.</p>
 
         <h2>9. Sécurité</h2>
         <p>Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, toute perte ou toute altération.</p>
@@ -136,8 +149,8 @@
             <h3>Contact</h3>
             <p><strong>Etienne Terrassement</strong></p>
             <p>Grande Rue 46, 2112 Môtiers NE</p>
-            <p>Tél. : <a href="tel:+41798559233">+41 79 855 92 33</a></p>
-            <p>E-mail : <a href="mailto:eric.etienne2001@gmail.com">eric.etienne2001@gmail.com</a></p>
+            <p>Tél. : <a href="#" id="cardPhone"></a></p>
+            <p>E-mail : <a href="#" id="cardEmail" data-u="etienne.terrassement24" data-d="gmail.com"></a></p>
         </div>
     </main>
 
@@ -146,5 +159,19 @@
             <p>&copy; 2026 Etienne Terrassement — Tous droits réservés — <a href="https://carnotz.ch" target="_blank" rel="noopener noreferrer">Carnotz Digital</a></p>
         </div>
     </footer>
+    <script>
+    (function() {
+        var p1='+41',p2='79',p3='855',p4='92',p5='33';
+        var tel=p1+p2+p3+p4+p5, telD=p1+' '+p2+' '+p3+' '+p4+' '+p5;
+        ['privacyPhone','cardPhone'].forEach(function(id) {
+            var el=document.getElementById(id);
+            if(el){el.href='tel:'+tel;el.textContent=telD;}
+        });
+        ['privacyEmail','cardEmail'].forEach(function(id) {
+            var el=document.getElementById(id);
+            if(el){var a=el.getAttribute('data-u')+'@'+el.getAttribute('data-d');el.href='mai'+'lto:'+a;el.textContent=a;}
+        });
+    })();
+    </script>
 </body>
 </html>
