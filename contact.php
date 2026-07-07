@@ -200,6 +200,7 @@ try {
 
     $confirm->setFrom(MAIL_FROM, MAIL_FROM_NAME);
     $confirm->addAddress($email, $name);
+    $confirm->addReplyTo(MAIL_TO, MAIL_TO_NAME);
 
     $confirm->Subject = "Confirmation de votre demande — Etienne Terrassement";
 
