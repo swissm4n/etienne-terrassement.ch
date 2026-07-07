@@ -18,6 +18,47 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "name": "Terrassement & Aménagements",
+                "serviceType": "Terrassement & Aménagements",
+                "description": "Travaux de terrassement et aménagements extérieurs à Môtiers, Val de Travers. Excavation, nivellement, préparation de terrain. Devis gratuit.",
+                "url": "https://etienne-terrassement.ch/terrassement",
+                "areaServed": {
+                    "@type": "Place",
+                    "name": "Val de Travers, Neuchâtel"
+                },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "name": "Etienne Terrassement",
+                    "telephone": "+41798559233",
+                    "url": "https://etienne-terrassement.ch"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Accueil",
+                        "item": "https://etienne-terrassement.ch/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Terrassement & Aménagements",
+                        "item": "https://etienne-terrassement.ch/terrassement"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -26,13 +67,13 @@
 <body>
     <header class="header">
         <div class="header-inner">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <img src="logo.svg" alt="Etienne Terrassement" class="logo-img">
             </a>
             <nav class="nav">
-                <a href="index.html">Accueil</a>
-                <a href="index.html#services">Services</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="/">Accueil</a>
+                <a href="/#services">Services</a>
+                <a href="/#contact">Contact</a>
             </nav>
             <div class="header-right">
                 <a href="#" class="header-phone" id="headerPhone">
@@ -48,13 +89,13 @@
         </div>
     </header>
     <nav class="mobile-nav" id="mobileNav">
-        <a href="index.html">Accueil</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="/">Accueil</a>
+        <a href="/#services">Services</a>
+        <a href="/#contact">Contact</a>
     </nav>
 
     <div class="service-hero">
-        <img src="photos/terrassement-thumb.jpg" alt="Terrassement & Aménagements — Etienne Terrassement" width="1440" height="1800">
+        <img src="photos/terrassement-thumb.webp" alt="Terrassement & Aménagements — Etienne Terrassement" width="800" height="1000">
     </div>
 
     <div class="container">
@@ -83,10 +124,10 @@
                 <h2>Nos réalisations</h2>
                 <div class="gallery-carousel" id="gallery">
                     <div class="gallery-track" id="galleryTrack">
-                        <div class="gallery-slide"><img loading="lazy" src="photos/terrassement-0028.jpg" alt="Terrassement d'une place — Etienne Terrassement"><span class="slide-caption">Terrassement d'une place</span><span class="slide-label">terrassement-0028</span></div>
-                        <div class="gallery-slide"><img loading="lazy" src="photos/amenagement-0023.jpg" alt="Construction d'un terrain de pétanque — Etienne Terrassement"><span class="slide-caption">Construction d'un terrain de pétanque</span><span class="slide-label">amenagement-0023</span></div>
-                        <div class="gallery-slide"><img loading="lazy" src="photos/terrassement-0033.jpg" alt="Réalisation terrassement — Etienne Terrassement"><span class="slide-label">terrassement-0033</span></div>
-                        <div class="gallery-slide"><img loading="lazy" src="photos/geniecivil-0066.jpg" alt="Pose de dalles après terrassement — Etienne Terrassement"><span class="slide-caption">Pose de dalles après terrassement</span><span class="slide-label">geniecivil-0066</span></div>
+                        <div class="gallery-slide"><img loading="lazy" src="photos/terrassement-0028.webp" alt="Terrassement d'une place — Etienne Terrassement"><span class="slide-caption">Terrassement d'une place</span><span class="slide-label">terrassement-0028</span></div>
+                        <div class="gallery-slide"><img loading="lazy" src="photos/amenagement-0023.webp" alt="Construction d'un terrain de pétanque — Etienne Terrassement"><span class="slide-caption">Construction d'un terrain de pétanque</span><span class="slide-label">amenagement-0023</span></div>
+                        <div class="gallery-slide"><img loading="lazy" src="photos/terrassement-0033.webp" alt="Réalisation terrassement — Etienne Terrassement"><span class="slide-label">terrassement-0033</span></div>
+                        <div class="gallery-slide"><img loading="lazy" src="photos/geniecivil-0066.webp" alt="Pose de dalles après terrassement — Etienne Terrassement"><span class="slide-caption">Pose de dalles après terrassement</span><span class="slide-label">geniecivil-0066</span></div>
                     </div>
                 </div>
                 <div class="gallery-nav">
@@ -103,7 +144,7 @@
             <div class="service-cta">
                 <h3>Un projet de terrassement ?</h3>
                 <p>Contactez-nous pour un devis gratuit et sans engagement.</p>
-                <a href="index.html#contact" class="btn btn-primary">Demander un devis</a>
+                <a href="/#contact" class="btn btn-primary">Demander un devis</a>
             </div>
         </div>
     </div>
@@ -123,9 +164,9 @@
                 </div>
                 <p class="footer-text">&copy; 2026 Etienne Terrassement — Tous droits réservés<br>Site réalisé par <a href="https://carnotz.ch" target="_blank" rel="noopener noreferrer">Carnotz Digital</a></p>
                 <div class="footer-links">
-                    <a href="index.html#services">Services</a>
-                    <a href="index.html#contact">Contact</a>
-                    <a href="politique-donnees.html">Traitement des données</a>
+                    <a href="/#services">Services</a>
+                    <a href="/#contact">Contact</a>
+                    <a href="/politique-donnees">Traitement des données</a>
                 </div>
             </div>
         </div>

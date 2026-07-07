@@ -8,6 +8,9 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.etienne-terrassement\.ch$ [NC]
 RewriteRule ^ https://etienne-terrassement.ch%{REQUEST_URI} [L,R=301]
 
+# ── Rediriger /index et /index.html vers / ──
+RewriteRule ^index(\.html)?$ / [L,R=301]
+
 # ── URLs propres : masquer .html ──
 # Si le fichier .html existe, le servir sans l'extension
 RewriteCond %{REQUEST_FILENAME} !-d

@@ -18,6 +18,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="preload" as="image" href="hero.webp" fetchpriority="high">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -25,7 +26,7 @@
         "name": "Etienne Terrassement",
         "description": "Travaux de génie civil, terrassement et aménagements extérieurs à Môtiers, Val de Travers.",
         "url": "https://etienne-terrassement.ch",
-        "image": "https://etienne-terrassement.ch/hero.jpg",
+        "image": "https://etienne-terrassement.ch/og-image.jpg",
         "telephone": "+41798559233",
         "email": "etienne.terrassement24@gmail.com",
         "address": {
@@ -239,7 +240,7 @@
         .hero-bg {
             position: absolute;
             inset: 0;
-            background: url('hero.jpg') center center / cover no-repeat;
+            background: url('hero.webp') center center / cover no-repeat;
         }
         .hero-bg::after {
             content: '';
@@ -998,7 +999,7 @@
         <div class="container">
             <div class="about-grid">
                 <div class="about-image reveal">
-                    <img src="photos/about-camion.jpg" alt="Camion Etienne Terrassement — Val de Travers" width="1440" height="1440">
+                    <img src="photos/about-camion.webp" alt="Camion Etienne Terrassement — Val de Travers" width="1000" height="1000">
                     <div class="about-image-accent"></div>
                 </div>
                 <div class="about-text reveal">
@@ -1047,9 +1048,9 @@
             </div>
             <div class="services-grid">
                 <!-- Service 1: Génie civil -->
-                <a href="genie-civil.html" class="service-card service-card--image reveal">
+                <a href="/genie-civil" class="service-card service-card--image reveal">
                     <div class="service-card-img">
-                        <img src="photos/geniecivil-thumb.jpg" alt="Génie civil — Etienne Terrassement" loading="lazy" width="1440" height="1440">
+                        <img src="photos/geniecivil-thumb.webp" alt="Génie civil — Etienne Terrassement" loading="lazy" width="1000" height="1000">
                     </div>
                     <div class="service-card-body">
                         <h3 data-i18n="s1_title">Génie civil & Travaux publics</h3>
@@ -1058,9 +1059,9 @@
                     </div>
                 </a>
                 <!-- Service 2: Terrassement -->
-                <a href="terrassement.html" class="service-card service-card--image reveal">
+                <a href="/terrassement" class="service-card service-card--image reveal">
                     <div class="service-card-img">
-                        <img src="photos/terrassement-thumb.jpg" alt="Terrassement — Etienne Terrassement" loading="lazy" width="1440" height="1800">
+                        <img src="photos/terrassement-thumb.webp" alt="Terrassement — Etienne Terrassement" loading="lazy" width="800" height="1000">
                     </div>
                     <div class="service-card-body">
                         <h3 data-i18n="s2_title">Terrassement & Aménagements</h3>
@@ -1069,9 +1070,9 @@
                     </div>
                 </a>
                 <!-- Service 4: Chemins -->
-                <a href="chemins.html" class="service-card service-card--image reveal">
+                <a href="/chemins" class="service-card service-card--image reveal">
                     <div class="service-card-img">
-                        <img src="photos/chemins-thumb.jpg" alt="Construction de chemins — Etienne Terrassement" loading="lazy" width="1440" height="1440">
+                        <img src="photos/chemins-thumb.webp" alt="Construction de chemins — Etienne Terrassement" loading="lazy" width="1000" height="1000">
                     </div>
                     <div class="service-card-body">
                         <h3 data-i18n="s4_title">Construction de chemins</h3>
@@ -1080,9 +1081,9 @@
                     </div>
                 </a>
                 <!-- Service 5: Bitumineux -->
-                <a href="revetements-bitumineux.html" class="service-card service-card--image reveal">
+                <a href="/revetements-bitumineux" class="service-card service-card--image reveal">
                     <div class="service-card-img">
-                        <img src="revetementbitumineux.png" alt="Revêtements bitumineux — Etienne Terrassement" loading="lazy" width="805" height="601">
+                        <img src="revetementbitumineux.webp" alt="Revêtements bitumineux — Etienne Terrassement" loading="lazy" width="805" height="601">
                     </div>
                     <div class="service-card-body">
                         <h3 data-i18n="s5_title">Revêtements bitumineux</h3>
@@ -1091,9 +1092,9 @@
                     </div>
                 </a>
                 <!-- Service 7: Canalisations -->
-                <a href="canalisations.html" class="service-card service-card--image reveal">
+                <a href="/canalisations" class="service-card service-card--image reveal">
                     <div class="service-card-img">
-                        <img src="photos/canalisations-thumb.jpg" alt="Canalisations — Etienne Terrassement" loading="lazy" width="1440" height="1440">
+                        <img src="photos/canalisations-thumb.webp" alt="Canalisations — Etienne Terrassement" loading="lazy" width="1000" height="1000">
                     </div>
                     <div class="service-card-body">
                         <h3 data-i18n="s7_title">Canalisations</h3>
@@ -1253,7 +1254,7 @@
                     <a href="#about" data-i18n="nav_about">À propos</a>
                     <a href="#services" data-i18n="nav_services">Services</a>
                     <a href="#contact" data-i18n="nav_contact">Contact</a>
-                    <a href="politique-donnees.html" data-i18n="footer_privacy">Traitement des données</a>
+                    <a href="/politique-donnees" data-i18n="footer_privacy">Traitement des données</a>
                 </div>
             </div>
         </div>
@@ -1268,7 +1269,7 @@
             </h4>
             <p>
                 <span data-i18n="cookie_text">Ce site utilise des cookies pour améliorer votre expérience de navigation. En poursuivant, vous acceptez leur utilisation.</span>
-                <a href="politique-donnees.html" data-i18n="cookie_link">En savoir plus</a>
+                <a href="/politique-donnees" data-i18n="cookie_link">En savoir plus</a>
             </p>
             <div class="cookie-buttons">
                 <button class="cookie-btn cookie-btn-accept" id="cookieAccept" data-i18n="cookie_accept">Accepter</button>

@@ -18,6 +18,47 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "name": "Génie civil & Travaux publics",
+                "serviceType": "Génie civil & Travaux publics",
+                "description": "Travaux de génie civil et travaux publics à Môtiers, Val de Travers. Murs de soutènement, ouvrages divers. Devis gratuit.",
+                "url": "https://etienne-terrassement.ch/genie-civil",
+                "areaServed": {
+                    "@type": "Place",
+                    "name": "Val de Travers, Neuchâtel"
+                },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "name": "Etienne Terrassement",
+                    "telephone": "+41798559233",
+                    "url": "https://etienne-terrassement.ch"
+                }
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Accueil",
+                        "item": "https://etienne-terrassement.ch/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Génie civil & Travaux publics",
+                        "item": "https://etienne-terrassement.ch/genie-civil"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
@@ -26,13 +67,13 @@
 <body>
     <header class="header">
         <div class="header-inner">
-            <a href="index.html" class="logo">
+            <a href="/" class="logo">
                 <img src="logo.svg" alt="Etienne Terrassement" class="logo-img">
             </a>
             <nav class="nav">
-                <a href="index.html">Accueil</a>
-                <a href="index.html#services">Services</a>
-                <a href="index.html#contact">Contact</a>
+                <a href="/">Accueil</a>
+                <a href="/#services">Services</a>
+                <a href="/#contact">Contact</a>
             </nav>
             <div class="header-right">
                 <a href="#" class="header-phone" id="headerPhone">
@@ -48,13 +89,13 @@
         </div>
     </header>
     <nav class="mobile-nav" id="mobileNav">
-        <a href="index.html">Accueil</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="/">Accueil</a>
+        <a href="/#services">Services</a>
+        <a href="/#contact">Contact</a>
     </nav>
 
     <div class="service-hero">
-        <img src="photos/geniecivil-thumb.jpg" alt="Génie civil & Travaux publics — Etienne Terrassement" width="1440" height="1440">
+        <img src="photos/geniecivil-thumb.webp" alt="Génie civil & Travaux publics — Etienne Terrassement" width="1000" height="1000">
     </div>
 
     <div class="container">
@@ -82,8 +123,8 @@
                         <div class="gallery-slide"><img loading="lazy" src="photos/geniecivil-0101.webp" alt="Changement de couvercle et mise en place de tapis froid provisoire — Etienne Terrassement"><span class="slide-caption">Changement de couvercle et mise en place de tapis froid provisoire</span><span class="slide-label">geniecivil-0101</span></div>
                         <div class="gallery-slide"><img loading="lazy" src="photos/geniecivil-0102.webp" alt="Changement de couvercle et mise en place de tapis froid provisoire — Etienne Terrassement"><span class="slide-caption">Changement de couvercle et mise en place de tapis froid provisoire</span><span class="slide-label">geniecivil-0102</span></div>
                         <div class="gallery-slide"><img loading="lazy" src="photos/geniecivil-0103.webp" alt="Changement de couvercle et mise en place de tapis froid provisoire — Etienne Terrassement"><span class="slide-caption">Changement de couvercle et mise en place de tapis froid provisoire</span><span class="slide-label">geniecivil-0103</span></div>
-                        <div class="gallery-slide"><img loading="lazy" src="photos/geniecivil-0104.jpg" alt="Remplacement d'une armoire — Etienne Terrassement"><span class="slide-caption">Remplacement d'une armoire</span><span class="slide-label">geniecivil-0104</span></div>
-                        <div class="gallery-slide"><img loading="lazy" src="photos/geniecivil-0105.jpg" alt="Remplacement d'une armoire — Etienne Terrassement"><span class="slide-caption">Remplacement d'une armoire</span><span class="slide-label">geniecivil-0105</span></div>
+                        <div class="gallery-slide"><img loading="lazy" src="photos/geniecivil-0104.webp" alt="Remplacement d'une armoire — Etienne Terrassement"><span class="slide-caption">Remplacement d'une armoire</span><span class="slide-label">geniecivil-0104</span></div>
+                        <div class="gallery-slide"><img loading="lazy" src="photos/geniecivil-0105.webp" alt="Remplacement d'une armoire — Etienne Terrassement"><span class="slide-caption">Remplacement d'une armoire</span><span class="slide-label">geniecivil-0105</span></div>
                     </div>
                 </div>
                 <div class="gallery-nav">
@@ -100,7 +141,7 @@
             <div class="service-cta">
                 <h3>Un projet de génie civil ?</h3>
                 <p>Contactez-nous pour un devis gratuit et sans engagement.</p>
-                <a href="index.html#contact" class="btn btn-primary">Demander un devis</a>
+                <a href="/#contact" class="btn btn-primary">Demander un devis</a>
             </div>
         </div>
     </div>
@@ -120,9 +161,9 @@
                 </div>
                 <p class="footer-text">&copy; 2026 Etienne Terrassement — Tous droits réservés<br>Site réalisé par <a href="https://carnotz.ch" target="_blank" rel="noopener noreferrer">Carnotz Digital</a></p>
                 <div class="footer-links">
-                    <a href="index.html#services">Services</a>
-                    <a href="index.html#contact">Contact</a>
-                    <a href="politique-donnees.html">Traitement des données</a>
+                    <a href="/#services">Services</a>
+                    <a href="/#contact">Contact</a>
+                    <a href="/politique-donnees">Traitement des données</a>
                 </div>
             </div>
         </div>
